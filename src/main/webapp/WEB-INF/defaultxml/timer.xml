@@ -1,0 +1,45 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>timertype</id>
+			<name>Type</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>				
+				<value dependency="user">User</value>
+				<value dependency="null">FreeMinutesTimer</value>
+			</values>
+		</rec>
+		<rec>
+			<id>user</id>
+			<name>Enter Value (sec)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>timertype</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>	
+			</values>
+		</rec>
+	</recs>
+</mxParams>

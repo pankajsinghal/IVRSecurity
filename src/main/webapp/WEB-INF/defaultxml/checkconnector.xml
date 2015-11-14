@@ -1,0 +1,142 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>value</id>
+			<name>Display</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>checkconnector</id>
+			<name>Check Connector</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="dialout">Dialout</value>
+				<value dependency="generic">Generic</value>
+				<value dependency="digit">Digit</value>
+				<value dependency="expert">Expert</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>dialout</id>
+			<name>Dial out</name>
+			<type>select</type>
+			<dependency>
+				<id>checkconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">NotReachable</value>
+				<value dependency="null">Inactive</value>
+				<value dependency="null">Busy</value>
+				<value dependency="null">NoAnswer</value>
+				<value dependency="null">Success</value>
+				<value dependency="null">SwitchOff</value>
+				<value dependency="null">NetworkError</value>
+				<value dependency="null">NotAvailable</value>
+				<value dependency="null">NumberFormatInvalid</value>
+				<value dependency="null">Failed</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>generic</id>
+			<name>Generic</name>
+			<type>select</type>
+			<dependency>
+				<id>checkconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Success</value>
+				<value dependency="null">Failure</value>
+			</values>
+		</rec>
+		<rec>
+			<id>digit</id>
+			<name>Digit</name>
+			<type>select</type>
+			<dependency>
+				<id>checkconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">10</value>
+				<value dependency="null">11</value>
+				<value dependency="null">12</value>
+				<value dependency="null">13</value>
+				<value dependency="null">14</value>
+				<value dependency="null">15</value>
+				<value dependency="null">16</value>
+				<value dependency="null">17</value>
+				<value dependency="null">18</value>
+				<value dependency="null">19</value>
+				<value dependency="null">20</value>
+				<value dependency="null">21</value>
+				<value dependency="null">22</value>
+				<value dependency="null">23</value>
+				<value dependency="null">24</value>
+				<value dependency="null">25</value>
+				<value dependency="null">26</value>
+				<value dependency="null">27</value>
+				<value dependency="null">28</value>
+				<value dependency="null">29</value>
+				<value dependency="null">30</value>
+				<value dependency="null">31</value>
+				<value dependency="null">32</value>
+				<value dependency="null">33</value>
+				<value dependency="null">34</value>
+				<value dependency="null">35</value>
+				<value dependency="null">36</value>
+				<value dependency="null">37</value>
+				<value dependency="null">38</value>
+				<value dependency="null">39</value>
+				<value dependency="null">40</value>
+			</values>
+		</rec>
+		<rec>
+			<id>expert</id>
+			<name>Generic</name>
+			<type>select</type>
+			<dependency>
+				<id>checkconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Disconnected</value>
+				<value dependency="null">Timeup</value>
+			</values>
+		</rec>
+	</recs>
+</mxParams>

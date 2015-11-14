@@ -1,0 +1,137 @@
+<mxParams as="params">
+	<recs>
+
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>processing</id>
+			<name>Processing</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="dateformatter">DateFormatter</value>
+				<value dependency="setvoiceeffect">SetVoiceEffect</value>
+				<value dependency="setbackground">Setbackground</value>
+				<value dependency="setlanguage">SetLanguage</value>
+				<value dependency="namazalert">NamazAlert</value>
+				<value dependency="setanswer">SetAnswer</value>
+				<value dependency="startfrombookmark">StartFromBookmark</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>dateformatter</id>
+			<name>Set Date Format</name>
+			<type>textbox</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">mm/dd/yy</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>setvoiceeffect</id>
+			<name>Set Voice ID</name>
+			<type>textbox</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">101</value>
+			</values>
+		</rec>
+		<rec>
+			<id>setbackground</id>
+			<name>Set Background</name>
+			<type>textbox</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">1</value>
+			</values>
+		</rec>
+		<rec>
+			<id>setlanguage</id>
+			<name>SetLanguage</name>
+			<type>textbox</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">_E</value>
+			</values>
+		</rec>
+		<rec>
+			<id>namazalert</id>
+			<name>Type</name>
+			<type>select</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">ActivateNamazAlert</value>
+				<value dependency="null">DeActivateNamazAlert</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>setanswer</id>
+			<name>SetAnswer</name>
+			<type>select</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Correct</value>
+				<value dependency="null">Wrong</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>startfrombookmark</id>
+			<name>Start From Bookmark</name>
+			<type>select</type>
+			<dependency>
+				<id>processing</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">true</value>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+	</recs>
+</mxParams>

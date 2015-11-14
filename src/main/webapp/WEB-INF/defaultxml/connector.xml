@@ -1,0 +1,17 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>value</id>
+			<name>Description</name>
+			<type>nopopup</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+	</recs>
+</mxParams>

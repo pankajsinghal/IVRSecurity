@@ -1,0 +1,110 @@
+  body{
+   font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+   font-size:12px;
+   color: white;
+ }
+ p, h1, form, button{border:0; margin:0; padding:0;}
+ .spacer{clear:both; height:1px;}
+  
+   /* ----------- My Form ----------- */
+ .myform{
+   margin:auto auto;
+   width:1000px;
+   height: 100%;
+   overflow: hidden;
+ }
+ 
+ 
+  /* ----------- class playlist ----------- */
+   .playlist{
+       border:solid 3px #7CFC00;
+       background:#141517;  
+       text-align:center;     
+   }
+   .playlist h1 {
+       font-size:14px;
+       font-weight:bold;
+       border-bottom:2px solid #7CFC00;
+       padding:0px 0px 9px 0px;
+       
+   }
+    .btnRows{ 
+       text-align:right;     
+   }
+   
+   #playlistdiv{
+   		width:400px;
+   		height:220px;
+   		overflow:auto;
+   }
+   
+   #contentdiv{
+   		width:500px;
+   		height:486px;
+   }
+   
+   #playlistcontentdiv{
+   		width:400px;
+   		height:220px;
+   		overflow:auto;
+   }
+   
+   #newPlaylistDiv{
+   		width:300px;
+   		height:100px;
+   		overflow:auto;
+   }
+   #playselect{
+   		width:400px;
+   		height:191.5px;
+   }
+   
+   
+   #playcontentselect{
+   		width:1700px;
+   		height:175.5px;
+   }
+   
+   #iframe{
+   		width:496px;
+   		height:454px;
+   		background: white;
+   		overflow: auto;
+   }
+       .btnplaylist {
+   	background: -moz-linear-gradient(center top , #A5CD4E 0%, #6B8F1A 100%) repeat scroll 0 0 transparent;
+	box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+   	color: #FFFFFF;
+   	cursor: pointer;
+    border: 0 none;
+    border-radius: 26px 26px 26px 26px;
+    font-family: Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    outline: medium none;
+    padding: 6px 15px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out 0s;
+	width: auto;
+     background-color: #445b0f;
+   }
+   
+          .btnplaylistnopadding {
+   	background: -moz-linear-gradient(center top , #A5CD4E 0%, #6B8F1A 100%) repeat scroll 0 0 transparent;
+	box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+   	color: #FFFFFF;
+   	cursor: pointer;
+    border: 0 none;
+    border-radius: 26px 26px 26px 26px;
+    font-family: Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    outline: medium none;
+    padding: 3px 7px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out 0s;
+	width: auto;
+     background-color: #445b0f;
+   }

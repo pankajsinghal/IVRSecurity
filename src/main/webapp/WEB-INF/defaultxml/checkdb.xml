@@ -1,0 +1,76 @@
+<mxParams as="params">
+	<recs>		
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>checkdb</id>
+			<name>Check DB</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="servicename">GetUserDetail</value>
+				<value dependency="bpartyminlength">BPartyExists</value>
+				<value dependency="null">GetCircle</value>
+				<value dependency="null">GetBlacklisted</value>
+				<value dependency="null">GetWhitelisted</value>
+				<value dependency="null">GetRedCarpetCheck</value>
+                <value dependency="null">GetFreeMinutes</value>
+				<value dependency="null">GetSubsDialCount</value>
+				<value dependency="null">GetVisitorDialCount</value>
+				<value dependency="null">GetAlertStatus</value>
+				<value dependency="null">GetLanguage</value>
+				<value dependency="null">GetTimeOfDay</value>
+				<value dependency="null">GetDayOfWeek</value>
+				<value dependency="null">GetBookmark</value>
+				<value dependency="null">VoiceEffectExists</value>
+				<value dependency="null">IsExpertNumber</value>
+				<value dependency="null">IsCoordinatorNumber</value>
+				<value dependency="null">IsFanAvailable</value>
+				<value dependency="null">IsExpertAvailable</value>
+				<value dependency="null">FirstCallerOfMonth</value>
+			</values>
+		</rec>
+		<rec>
+			<id>servicename</id>
+			<name>Service Name</name>
+			<type>textbox</type>
+			<dependency>
+				<id>checkdb</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>bpartyminlength</id>
+			<name>BParty Min. Length</name>
+			<type>textbox</type>
+			<dependency>
+				<id>checkdb</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>				
+	</recs>
+</mxParams>

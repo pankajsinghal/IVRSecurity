@@ -1,0 +1,43 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>voicefreq</id>
+			<name>Voice Frequency</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>				
+			</values>
+		</rec>
+		<rec>
+			<id>time</id>
+			<name>Time (sec)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>				
+			</values>
+		</rec>		
+	</recs>
+</mxParams>

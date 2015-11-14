@@ -1,0 +1,45 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>value</id>
+			<name>Display</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>dtmf</id>
+			<name>DTMF</name>
+			<type>select</type>
+			<dependency>
+				<id>value</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>				
+				<value dependency="null">NoInput</value>		
+				<value dependency="null">Any</value>	
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+			</values>
+		</rec>
+	</recs>
+</mxParams>
+

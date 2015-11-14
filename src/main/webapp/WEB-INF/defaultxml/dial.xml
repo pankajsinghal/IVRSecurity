@@ -1,0 +1,150 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>dialout</id>
+			<name>Dial out</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>				
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="type">Type</value>
+				<value dependency="consentgateway">ConsentGateway</value>
+				<value dependency="null">B party</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>type</id>
+			<name>Type</name>
+			<type>select</type>
+			<dependency>
+				<id>dialout</id>
+				<value>null</value>
+				<action>select</action>
+			</dependency>			
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+            </values>
+		</rec>	
+		<rec>
+			<id>consentgateway</id>
+			<name>Phone Number</name>
+			<type>textbox</type>
+			<dependency>
+				<id>dialout</id>
+				<value>null</value>
+				<action>select</action>
+			</dependency>			
+			<values>
+				<value dependency="null">9876543210</value>				
+            </values>
+		</rec>		
+	
+		<rec>
+			<id>cli</id>
+			<name>CG Activate</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>cgcli</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>			
+		<rec>
+			<id>cgcli</id>
+			<name>CG CLI</name>
+			<type>textbox</type>
+			<dependency>
+				<id>cli</id>
+				<value>false</value>
+				<action>hidden</action>
+			</dependency>			
+			<values>
+				<value dependency="null"> </value>
+            </values>
+		</rec>
+		<rec>
+			<id>cutonringing</id>
+			<name>Cut On Ringing</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+		<rec>
+			<id>resourceurl</id>
+			<name>Resource URL</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>				
+			<values>
+				<value dependency="null"> </value>
+				
+			</values>
+		</rec>		
+		<rec>
+			<id>dialouttime</id>
+			<name>Dial Timeout (Secs)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>				
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>dialbg</id>
+			<name>Dial Background</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>				
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>			
+	</recs>
+</mxParams>

@@ -1,0 +1,158 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>calltype</id>
+			<name>Call Type</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">IVR</value>
+				<value dependency="null">OBD</value>
+			</values>
+		</rec>
+
+	
+		<rec>
+			<id>exittimer</id>
+			<name>Exit Timer</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>
+		<rec>
+			<id>service</id>
+			<name>Service Name</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>shortcode</id>
+			<name>Short Code</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">56060</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>recording</id>
+			<name>% Recording</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">10</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>autoanswer</id>
+			<name>Auto Answer</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">true</value>
+			</values>
+		</rec>
+		<rec>
+			<id>optiondealing</id>
+			<name>Option Dealing</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">BParty</value>
+				<value dependency="null">SongNumber</value>
+			</values>
+		</rec>		
+		<rec>
+			<id>singlebookmark</id>
+			<name>Single Bookmark</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>resourceurlstart</id>
+			<name>Resource URL</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>				
+			<values>
+				<value dependency="null"> </value>
+				
+			</values>
+		</rec>	
+		<rec>
+			<id>defaultlang</id>
+			<name>Default Lang</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">_E</value>
+			</values>
+		</rec>
+
+	</recs>
+</mxParams>

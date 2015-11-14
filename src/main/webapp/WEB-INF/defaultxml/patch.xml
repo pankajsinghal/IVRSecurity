@@ -1,0 +1,87 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>patchwith</id>
+			<name>Patch With</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="patchmode">Expert</value>
+				<value dependency="null">ConsentGateway</value>
+				<value dependency="null">BParty</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>patchmode</id>
+			<name>Mode</name>
+			<type>select</type>
+			<dependency>
+				<id>patchwith</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Listen</value>
+				<value dependency="null">Talk</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>patchtimer</id>
+			<name>Timer</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>patchtimevalue</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>			
+		<rec>
+			<id>patchtimevalue</id>
+			<name>Seconds</name>
+			<type>textbox</type>
+			<dependency>
+				<id>patchtimer</id>
+				<value>false</value>
+				<action>hidden</action>
+			</dependency>			
+			<values>
+				<value dependency="null"> </value>
+            </values>
+		</rec>
+		<rec>
+			<id>patch</id>
+			<name>Reason</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>			
+	</recs>
+</mxParams>

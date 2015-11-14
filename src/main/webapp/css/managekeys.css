@@ -1,0 +1,158 @@
+#facebox .b {
+  background: url(../css/image/b.png);
+}
+
+#facebox .tl {
+  background:url(../css/image/tl.png);
+}
+
+#facebox .tr {
+  background:url(../css/image/tr.png);
+}
+
+#facebox .bl {
+  background:url(../css/image/bl.png);
+}
+
+#facebox .br {
+  background:url(../css/image/br.png);
+}
+
+#facebox {
+  position: absolute;
+  width: 350px;
+  top: 10%;
+  left: 10%;
+  z-index: 100;
+  text-align: left;
+  margin-laft:800px;
+}
+
+#facebox .popup {
+  position: relative;
+}
+
+#facebox table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+#facebox .body {
+  padding: 10px;
+  background: #f8f8f8;
+  width: 350px;
+}
+
+#facebox .loading {
+  text-align: center;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox img {
+  border: 0;
+}
+
+#facebox .footer {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+#facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.managekeys
+{
+ 
+ 	font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding:0px 0px 10px 0px;
+}
+
+
+#addButton  {
+    background: url("../css/image/add.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    height: 20px;
+    width: 20px;
+     margin:0px 0px 0px 5px;
+    
+}
+
+#offerpeopleremove {
+    background: url("../css/image/remove.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 14px;
+    width: 20px;
+   	padding:2px 0px 3px 20px;
+}
+
+#addlongcode
+{
+	background: -moz-linear-gradient(center top , #A5CD4E 0%, #6B8F1A 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    border-radius: 26px;
+    box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+    color: #445B0F;
+    cursor: pointer;
+    font-family: Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 24px 0 10px 25px;
+    outline: medium none;
+    padding: 6px 15px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out 0s;
+    width: 100px;
+    color:#fff;
+    background-color: #445b0f;
+}
+
+#deletelongcoede
+{
+	background: -moz-linear-gradient(center top , #800020 0%, #800020 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    border-radius: 26px;
+    box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+    color: #445B0F;
+    cursor: pointer;
+    font-family: Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 10px 0 10px 45px;
+    outline: medium none;
+    padding: 6px 15px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out 0s;
+    width: 100px;
+    color:#fff;
+	
+}
+#TextBoxesGroup label
+{
+	font-weight:bold;
+}
+.footer .close
+{
+	background: url("../css/image/cross_icon.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 14px;
+    width: 20px;
+   	padding:2px 0px 3px 76px;
+	
+}
+

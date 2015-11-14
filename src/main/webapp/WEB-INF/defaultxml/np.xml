@@ -1,0 +1,73 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>promptfile</id>
+			<name>File/s</name>
+			<type>selectmul</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="discard">1</value>
+				<value dependency="discard">1</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>bargein</id>
+			<name>Barge In</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">true</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>timeout</id>
+			<name>TimeOut(sec)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">25</value>
+			</values>
+		</rec>		
+		<rec>
+			<id>repeatcount</id>
+			<name>Repeat Count</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+	</recs>
+</mxParams>
+

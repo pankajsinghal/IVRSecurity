@@ -1,0 +1,174 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Tree</title>
+
+<!--<link rel="stylesheet" type="text/css" href="css/demo.css">-->
+<link rel="stylesheet" type="text/css" href="styles/base.css">
+<link rel="stylesheet" type="text/css" href="styles/tree.css">
+
+
+<script type="text/javascript" src="js/zk.base.js"></script>
+<script type="text/javascript" src="js/zk.popupmenu.js"></script>
+<script type="text/javascript" src="js/zk.treenode.js"></script>
+<script type="text/javascript" src="js/zk.tree.js"></script>
+<script type="text/javascript" src="js/jkl-dumper.js"></script>
+<script type="text/javascript" src="js/ObjTree.js"></script>
+<script type="text/javascript">
+			var prefun = test_addNode;
+		
+			function initTree(showline){
+				var cont = zk.get("cont");
+				cont.innerHTML= '';
+				zk.Tree.S='images/b.gif';
+				zk.console=zk.get("logs");	
+				window.tree=new zk.Tree({showline:showline,to:cont});
+				window.gNode=new zk.TreeNode({tree:tree,text:"Filestore",key:"demo"});
+				zk.setStyle(gNode.label,"color:red;font-size:18px;font-weight:bold;");
+				tree.addNode(tree.root,gNode);
+				zk.oe(tree,'select',function(){
+					zk.log('tree.selectedNode:' + tree.selectedNode.caption);
+				});
+				tree.oncontextmenu = function(e,node){
+					if (!node.contmenu){
+						node.contmenu=new zk.PopupMenu();
+					}
+					node.contmenu.removeitemAll();
+					var item = new zk.MenuItem({text:'menu for '+node.caption});
+					node.contmenu.additem(item);
+					
+					node.contmenu.show({event:e});	
+					
+					return false;
+				};
+				
+				test();
+			}
+			
+			zk.ok(initTree);	
+
+			//style
+			function test_style(showline){
+				initTree(showline);
+				prefun();
+			}
+			
+			//addNode
+			function test_addNode(){
+				prefun = test_addNode;
+				gNode.removeChildren();
+				var pe=new Date();
+				for (var i=0;i<10;i++){				
+					var node = new zk.TreeNode({tree:tree,text:i+''});
+					tree.addNode(gNode,node);
+				}					
+				var pd=new Date();
+				//alert("cost " + (pd-pe) + " ms");				
+			}	
+			
+			//event		
+			//onclick
+			function test_onclick(node){
+				alert(node.caption);
+			}
+			
+			function test()
+			{
+				/* var cookie_value = null;
+				var cookieName = 'xmlValue' + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1,c.length);
+					if (c.indexOf(cookieName) == 0) 
+					{
+						cookie_value=c.substring(cookieName.length,c.length);
+						break;
+					}
+				}
+				
+				var xml = cookie_value; */
+				var xml = window.parent.document.getElementById('hiddenxml').value;
+				//var xml = document.getElementById('hiddenxml').value;
+				//var xml = '<filestore><root><HarryPotter><Book1><Chapter1><MiscChapter><__wavs__><wav><id>100</id><file>\\HarryPotter\\Book1\\Chapter1\\MiscChapter\\Demo1.wav</file><checked>false</checked></wav><wav><id>-1</id><file>\\HarryPotter\\Book1\\Chapter1\\MiscChapter\\Demo1.wav</file><checked>false</checked></wav></__wavs__></MiscChapter><__wavs__><wav><id>1</id><file>\\HarryPotter\\Book1\\Chapter1\\1.wav</file><checked>false</checked></wav><wav><id>2</id><file>\\HarryPotter\\Book1\\Chapter1\\2.wav</file><checked>false</checked></wav><wav><id>3</id><file>\\HarryPotter\\Book1\\Chapter1\\3.wav</file><checked>false</checked></wav><wav><id>4</id><file>\\HarryPotter\\Book1\\Chapter1\\4.wav</file><checked>false</checked></wav><wav><id>5</id><file>\\HarryPotter\\Book1\\Chapter1\\5.wav</file><checked>false</checked></wav><wav><id>6</id><file>\\HarryPotter\\Book1\\Chapter1\\6.wav</file><checked>false</checked></wav><wav><id>7</id><file>\\HarryPotter\\Book1\\Chapter1\\7.wav</file><checked>false</checked></wav><wav><id>8</id><file>\\HarryPotter\\Book1\\Chapter1\\8.wav</file><checked>false</checked></wav><wav><id>9</id><file>\\HarryPotter\\Book1\\Chapter1\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter1><Chapter2><__wavs__><wav><id>11</id><file>\\HarryPotter\\Book1\\Chapter2\\1.wav</file><checked>false</checked></wav><wav><id>12</id><file>\\HarryPotter\\Book1\\Chapter2\\2.wav</file><checked>false</checked></wav><wav><id>13</id><file>\\HarryPotter\\Book1\\Chapter2\\3.wav</file><checked>false</checked></wav><wav><id>14</id><file>\\HarryPotter\\Book1\\Chapter2\\4.wav</file><checked>false</checked></wav><wav><id>15</id><file>\\HarryPotter\\Book1\\Chapter2\\5.wav</file><checked>false</checked></wav><wav><id>16</id><file>\\HarryPotter\\Book1\\Chapter2\\6.wav</file><checked>false</checked></wav><wav><id>17</id><file>\\HarryPotter\\Book1\\Chapter2\\7.wav</file><checked>false</checked></wav><wav><id>18</id><file>\\HarryPotter\\Book1\\Chapter2\\8.wav</file><checked>false</checked></wav><wav><id>19</id><file>\\HarryPotter\\Book1\\Chapter2\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter2></Book1><Book2><Chapter1><__wavs__><wav><id>21</id><file>\\HarryPotter\\Book2\\Chapter1\\1.wav</file><checked>false</checked></wav><wav><id>22</id><file>\\HarryPotter\\Book2\\Chapter1\\2.wav</file><checked>false</checked></wav><wav><id>23</id><file>\\HarryPotter\\Book2\\Chapter1\\3.wav</file><checked>false</checked></wav><wav><id>24</id><file>\\HarryPotter\\Book2\\Chapter1\\4.wav</file><checked>false</checked></wav><wav><id>25</id><file>\\HarryPotter\\Book2\\Chapter1\\5.wav</file><checked>false</checked></wav><wav><id>26</id><file>\\HarryPotter\\Book2\\Chapter1\\6.wav</file><checked>false</checked></wav><wav><id>27</id><file>\\HarryPotter\\Book2\\Chapter1\\7.wav</file><checked>false</checked></wav><wav><id>28</id><file>\\HarryPotter\\Book2\\Chapter1\\8.wav</file><checked>false</checked></wav><wav><id>29</id><file>\\HarryPotter\\Book2\\Chapter1\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter1><Chapter2><__wavs__><wav><id>31</id><file>\\HarryPotter\\Book2\\Chapter2\\1.wav</file><checked>false</checked></wav><wav><id>32</id><file>\\HarryPotter\\Book2\\Chapter2\\2.wav</file><checked>false</checked></wav><wav><id>33</id><file>\\HarryPotter\\Book2\\Chapter2\\3.wav</file><checked>false</checked></wav><wav><id>34</id><file>\\HarryPotter\\Book2\\Chapter2\\4.wav</file><checked>false</checked></wav><wav><id>35</id><file>\\HarryPotter\\Book2\\Chapter2\\5.wav</file><checked>false</checked></wav><wav><id>36</id><file>\\HarryPotter\\Book2\\Chapter2\\6.wav</file><checked>false</checked></wav><wav><id>37</id><file>\\HarryPotter\\Book2\\Chapter2\\7.wav</file><checked>false</checked></wav><wav><id>38</id><file>\\HarryPotter\\Book2\\Chapter2\\8.wav</file><checked>false</checked></wav><wav><id>39</id><file>\\HarryPotter\\Book2\\Chapter2\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter2></Book2></HarryPotter><LordOfTheRings><Book1><Chapter1><__wavs__><wav><id>41</id><file>\\LordOfTheRings\\Book1\\Chapter1\\1.wav</file><checked>false</checked></wav><wav><id>42</id><file>\\LordOfTheRings\\Book1\\Chapter1\\2.wav</file><checked>false</checked></wav><wav><id>43</id><file>\\LordOfTheRings\\Book1\\Chapter1\\3.wav</file><checked>false</checked></wav><wav><id>44</id><file>\\LordOfTheRings\\Book1\\Chapter1\\4.wav</file><checked>false</checked></wav><wav><id>45</id><file>\\LordOfTheRings\\Book1\\Chapter1\\5.wav</file><checked>false</checked></wav><wav><id>46</id><file>\\LordOfTheRings\\Book1\\Chapter1\\6.wav</file><checked>false</checked></wav><wav><id>47</id><file>\\LordOfTheRings\\Book1\\Chapter1\\7.wav</file><checked>false</checked></wav><wav><id>48</id><file>\\LordOfTheRings\\Book1\\Chapter1\\8.wav</file><checked>false</checked></wav><wav><id>49</id><file>\\LordOfTheRings\\Book1\\Chapter1\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter1><Chapter2><__wavs__><wav><id>51</id><file>\\LordOfTheRings\\Book1\\Chapter2\\1.wav</file><checked>false</checked></wav><wav><id>52</id><file>\\LordOfTheRings\\Book1\\Chapter2\\2.wav</file><checked>false</checked></wav><wav><id>53</id><file>\\LordOfTheRings\\Book1\\Chapter2\\3.wav</file><checked>false</checked></wav><wav><id>54</id><file>\\LordOfTheRings\\Book1\\Chapter2\\4.wav</file><checked>false</checked></wav><wav><id>55</id><file>\\LordOfTheRings\\Book1\\Chapter2\\5.wav</file><checked>false</checked></wav><wav><id>56</id><file>\\LordOfTheRings\\Book1\\Chapter2\\6.wav</file><checked>false</checked></wav><wav><id>57</id><file>\\LordOfTheRings\\Book1\\Chapter2\\7.wav</file><checked>false</checked></wav><wav><id>58</id><file>\\LordOfTheRings\\Book1\\Chapter2\\8.wav</file><checked>false</checked></wav><wav><id>59</id><file>\\LordOfTheRings\\Book1\\Chapter2\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter2></Book1><Book2><Chapter1><__wavs__><wav><id>61</id><file>\\LordOfTheRings\\Book2\\Chapter1\\1.wav</file><checked>false</checked></wav><wav><id>62</id><file>\\LordOfTheRings\\Book2\\Chapter1\\2.wav</file><checked>false</checked></wav><wav><id>63</id><file>\\LordOfTheRings\\Book2\\Chapter1\\3.wav</file><checked>false</checked></wav><wav><id>64</id><file>\\LordOfTheRings\\Book2\\Chapter1\\4.wav</file><checked>false</checked></wav><wav><id>65</id><file>\\LordOfTheRings\\Book2\\Chapter1\\5.wav</file><checked>false</checked></wav><wav><id>66</id><file>\\LordOfTheRings\\Book2\\Chapter1\\6.wav</file><checked>false</checked></wav><wav><id>67</id><file>\\LordOfTheRings\\Book2\\Chapter1\\7.wav</file><checked>false</checked></wav><wav><id>68</id><file>\\LordOfTheRings\\Book2\\Chapter1\\8.wav</file><checked>false</checked></wav><wav><id>69</id><file>\\LordOfTheRings\\Book2\\Chapter1\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter1><Chapter2><__wavs__><wav><id>71</id><file>\\LordOfTheRings\\Book2\\Chapter2\\1.wav</file><checked>false</checked></wav><wav><id>72</id><file>\\LordOfTheRings\\Book2\\Chapter2\\2.wav</file><checked>false</checked></wav><wav><id>73</id><file>\\LordOfTheRings\\Book2\\Chapter2\\3.wav</file><checked>false</checked></wav><wav><id>74</id><file>\\LordOfTheRings\\Book2\\Chapter2\\4.wav</file><checked>false</checked></wav><wav><id>75</id><file>\\LordOfTheRings\\Book2\\Chapter2\\5.wav</file><checked>false</checked></wav><wav><id>76</id><file>\\LordOfTheRings\\Book2\\Chapter2\\6.wav</file><checked>false</checked></wav><wav><id>77</id><file>\\LordOfTheRings\\Book2\\Chapter2\\7.wav</file><checked>false</checked></wav><wav><id>78</id><file>\\LordOfTheRings\\Book2\\Chapter2\\8.wav</file><checked>false</checked></wav><wav><id>79</id><file>\\LordOfTheRings\\Book2\\Chapter2\\9.wav</file><checked>false</checked></wav></__wavs__></Chapter2></Book2></LordOfTheRings><__wavs__><wav><id>81</id><file>Misc1.wav</file><checked>false</checked></wav><wav><id>82</id><file>Misc2.wav</file><checked>false</checked></wav><wav><id>83</id><file>Misc3.wav</file><checked>false</checked></wav></__wavs__></root></filestore>';
+				//var xml = '<filestore><root><Songs_new><_12nov><__wavs__><wav><id>1</id><file>Y:\\Songs_new\\12-nov\\UNR_H.wav</file><checked>false</checked><wav><id>-1</id><file>default</file><checked>false</checked></wav></wav></__wavs__><__wavs__><wav><id>116</id><file>Y:\\Songs_new\\dtmf choices.wav</file><checked>false</checked></wav><wav><id>117</id><file>Y:\\Songs_new\\welcome.wav</file><checked>false</checked></wav></__wavs__></_12nov><first><__wavs__><wav><id>2</id><file>Y:\\Songs_new\\first\\100Names.wav</file><checked>false</checked></wav><wav><id>3</id><file>Y:\\Songs_new\\first\\100Names.wav</file><checked>false</checked></wav><wav><id>4</id><file>Y:\\Songs_new\\first\\787blank_E.wav</file><checked>false</checked></wav><wav><id>5</id><file>Y:\\Songs_new\\first\\787blank_E.wav</file><checked>false</checked></wav><wav><id>6</id><file>Y:\\Songs_new\\first\\787_E.wav</file><checked>false</checked></wav><wav><id>7</id><file>Y:\\Songs_new\\first\\787_E.wav</file><checked>false</checked></wav><wav><id>8</id><file>Y:\\Songs_new\\first\\787_S.wav</file><checked>false</checked></wav><wav><id>9</id><file>Y:\\Songs_new\\first\\787Timer_E.wav</file><checked>false</checked></wav><wav><id>10</id><file>Y:\\Songs_new\\first\\797_E.wav</file><checked>false</checked></wav><wav><id>11</id><file>Y:\\Songs_new\\first\\7578_E.wav</file><checked>false</checked></wav><wav><id>12</id><file>Y:\\Songs_new\\first\\7578_S.wav</file><checked>false</checked></wav><wav><id>13</id><file>Y:\\Songs_new\\first\\56060.wav</file><checked>false</checked></wav><wav><id>14</id><file>Y:\\Songs_new\\first\\56060_S.wav</file><checked>false</checked></wav><wav><id>15</id><file>Y:\\Songs_new\\first\\56060_E.wav</file><checked>false</checked></wav><wav><id>16</id><file>Y:\\Songs_new\\first\\560601_E.wav</file><checked>false</checked></wav><wav><id>17</id><file>Y:\\Songs_new\\first\\560601_E.wav</file><checked>false</checked></wav><wav><id>18</id><file>Y:\\Songs_new\\first\\beep_E.wav</file><checked>false</checked></wav><wav><id>19</id><file>Y:\\Songs_new\\first\\beep_E.wav</file><checked>false</checked></wav><wav><id>20</id><file>Y:\\Songs_new\\first\\beeps_E.wav</file><checked>false</checked></wav><wav><id>21</id><file>Y:\\Songs_new\\first\\beeps_E.wav</file><checked>false</checked></wav><wav><id>22</id><file>Y:\\Songs_new\\first\\BlankTimer1_E.wav</file><checked>false</checked></wav><wav><id>23</id><file>Y:\\Songs_new\\first\\BlankTimer1_E.wav</file><checked>false</checked></wav><wav><id>24</id><file>Y:\\Songs_new\\first\\BlankTimer1_S.wav</file><checked>false</checked></wav><wav><id>25</id><file>Y:\\Songs_new\\first\\BlankTimer1_S.wav</file><checked>false</checked></wav><wav><id>26</id><file>Y:\\Songs_new\\first\\BlankTimer2_E.wav</file><checked>false</checked></wav><wav><id>27</id><file>Y:\\Songs_new\\first\\BlankTimer2_E.wav</file><checked>false</checked></wav><wav><id>28</id><file>Y:\\Songs_new\\first\\BlankTimer2_S.wav</file><checked>false</checked></wav><wav><id>29</id><file>Y:\\Songs_new\\first\\BlankTimer2_S.wav</file><checked>false</checked></wav><wav><id>30</id><file>Y:\\Songs_new\\first\\BlankTimer_E.wav</file><checked>false</checked></wav><wav><id>31</id><file>Y:\\Songs_new\\first\\BlankTimer_E.wav</file><checked>false</checked></wav><wav><id>33</id><file>Y:\\Songs_new\\first\\BlankTimer_S.wav</file><checked>false</checked></wav><wav><id>32</id><file>Y:\\Songs_new\\first\\BlankTimer_S.wav</file><checked>false</checked></wav><wav><id>35</id><file>Y:\\Songs_new\\first\\ChangeLocation_E.wav</file><checked>false</checked></wav><wav><id>34</id><file>Y:\\Songs_new\\first\\ChangeLocation_E.wav</file><checked>false</checked></wav><wav><id>37</id><file>Y:\\Songs_new\\first\\ChangeLocation_S.wav</file><checked>false</checked></wav><wav><id>36</id><file>Y:\\Songs_new\\first\\ChangeLocation_S.wav</file><checked>false</checked></wav><wav><id>39</id><file>Y:\\Songs_new\\first\\Copy of GetQuran_E.wav</file><checked>false</checked></wav><wav><id>38</id><file>Y:\\Songs_new\\first\\Copy of GetQuran_E.wav</file><checked>false</checked></wav><wav><id>41</id><file>Y:\\Songs_new\\first\\Exit1_E.wav</file><checked>false</checked></wav><wav><id>40</id><file>Y:\\Songs_new\\first\\Exit1_E.wav</file><checked>false</checked></wav><wav><id>42</id><file>Y:\\Songs_new\\first\\ExitBlank1_E.wav</file><checked>false</checked></wav><wav><id>43</id><file>Y:\\Songs_new\\first\\ExitBlank1_E.wav</file><checked>false</checked></wav><wav><id>45</id><file>Y:\\Songs_new\\first\\ExitBlank_E.wav</file><checked>false</checked></wav><wav><id>44</id><file>Y:\\Songs_new\\first\\ExitBlank_E.wav</file><checked>false</checked></wav><wav><id>46</id><file>Y:\\Songs_new\\first\\ExitBlank_S.wav</file><checked>false</checked></wav><wav><id>47</id><file>Y:\\Songs_new\\first\\ExitBlank_S.wav</file><checked>false</checked></wav><wav><id>49</id><file>Y:\\Songs_new\\first\\Exit_E.wav</file><checked>false</checked></wav><wav><id>48</id><file>Y:\\Songs_new\\first\\Exit_E.wav</file><checked>false</checked></wav><wav><id>50</id><file>Y:\\Songs_new\\first\\Exit_S.wav</file><checked>false</checked></wav><wav><id>51</id><file>Y:\\Songs_new\\first\\Exit_S.wav</file><checked>false</checked></wav><wav><id>52</id><file>Y:\\Songs_new\\first\\GetDigitsTasbih_E.wav</file><checked>false</checked></wav><wav><id>53</id><file>Y:\\Songs_new\\first\\GetDigitsTasbih_E.wav</file><checked>false</checked></wav><wav><id>54</id><file>Y:\\Songs_new\\first\\GetDigitsTasbih_S.wav</file><checked>false</checked></wav><wav><id>55</id><file>Y:\\Songs_new\\first\\GetDigitsTasbih_S.wav</file><checked>false</checked></wav><wav><id>57</id><file>Y:\\Songs_new\\first\\GetQuran_E.wav</file><checked>false</checked></wav><wav><id>56</id><file>Y:\\Songs_new\\first\\GetQuran_E.wav</file><checked>false</checked></wav><wav><id>59</id><file>Y:\\Songs_new\\first\\GetQuran_S.wav</file><checked>false</checked></wav><wav><id>58</id><file>Y:\\Songs_new\\first\\GetQuran_S.wav</file><checked>false</checked></wav><wav><id>60</id><file>Y:\\Songs_new\\first\\HelpIslamic_E.wav</file><checked>false</checked></wav><wav><id>61</id><file>Y:\\Songs_new\\first\\HelpIslamic_E.wav</file><checked>false</checked></wav><wav><id>62</id><file>Y:\\Songs_new\\first\\HelpIslamic_S.wav</file><checked>false</checked></wav><wav><id>63</id><file>Y:\\Songs_new\\first\\HelpIslamic_S.wav</file><checked>false</checked></wav><wav><id>65</id><file>Y:\\Songs_new\\first\\IslamicAbout_E.wav</file><checked>false</checked></wav><wav><id>64</id><file>Y:\\Songs_new\\first\\IslamicAbout_E.wav</file><checked>false</checked></wav><wav><id>66</id><file>Y:\\Songs_new\\first\\IslamicAbout_S.wav</file><checked>false</checked></wav><wav><id>67</id><file>Y:\\Songs_new\\first\\IslamicAbout_S.wav</file><checked>false</checked></wav><wav><id>69</id><file>Y:\\Songs_new\\first\\IslamicNavigation_E.wav</file><checked>false</checked></wav><wav><id>68</id><file>Y:\\Songs_new\\first\\IslamicNavigation_E.wav</file><checked>false</checked></wav><wav><id>70</id><file>Y:\\Songs_new\\first\\IslamicNavigation_S.wav</file><checked>false</checked></wav><wav><id>71</id><file>Y:\\Songs_new\\first\\IslamicNavigation_S.wav</file><checked>false</checked></wav><wav><id>73</id><file>Y:\\Songs_new\\first\\IslamicTimerBlank_E.wav</file><checked>false</checked></wav><wav><id>72</id><file>Y:\\Songs_new\\first\\IslamicTimerBlank_E.wav</file><checked>false</checked></wav><wav><id>75</id><file>Y:\\Songs_new\\first\\IslmaicTimerBlank_E.wav</file><checked>false</checked></wav><wav><id>74</id><file>Y:\\Songs_new\\first\\IslmaicTimerBlank_E.wav</file><checked>false</checked></wav><wav><id>77</id><file>Y:\\Songs_new\\first\\IslmaicTimer_E.wav</file><checked>false</checked></wav><wav><id>76</id><file>Y:\\Songs_new\\first\\IslmaicTimer_E.wav</file><checked>false</checked></wav><wav><id>78</id><file>Y:\\Songs_new\\first\\Language.wav</file><checked>false</checked></wav><wav><id>79</id><file>Y:\\Songs_new\\first\\Language.wav</file><checked>false</checked></wav><wav><id>81</id><file>Y:\\Songs_new\\first\\Language1.wav</file><checked>false</checked></wav><wav><id>80</id><file>Y:\\Songs_new\\first\\Language1.wav</file><checked>false</checked></wav><wav><id>82</id><file>Y:\\Songs_new\\first\\NamazNewUser_E.wav</file><checked>false</checked></wav><wav><id>83</id><file>Y:\\Songs_new\\first\\NamazNewUser_E.wav</file><checked>false</checked></wav><wav><id>84</id><file>Y:\\Songs_new\\first\\NamazNewUser_S.wav</file><checked>false</checked></wav><wav><id>85</id><file>Y:\\Songs_new\\first\\NamazNewUser_S.wav</file><checked>false</checked></wav><wav><id>87</id><file>Y:\\Songs_new\\first\\NamazOldUser_E.wav</file><checked>false</checked></wav><wav><id>86</id><file>Y:\\Songs_new\\first\\NamazOldUser_E.wav</file><checked>false</checked></wav><wav><id>88</id><file>Y:\\Songs_new\\first\\NamazOldUser_S.wav</file><checked>false</checked></wav><wav><id>89</id><file>Y:\\Songs_new\\first\\NamazOldUser_S.wav</file><checked>false</checked></wav><wav><id>90</id><file>Y:\\Songs_new\\first\\Newuser1_E.wav</file><checked>false</checked></wav><wav><id>91</id><file>Y:\\Songs_new\\first\\Newuser1_E.wav</file><checked>false</checked></wav><wav><id>93</id><file>Y:\\Songs_new\\first\\Newuser2_E.wav</file><checked>false</checked></wav><wav><id>92</id><file>Y:\\Songs_new\\first\\Newuser2_E.wav</file><checked>false</checked></wav><wav><id>95</id><file>Y:\\Songs_new\\first\\Newuser_E.wav</file><checked>false</checked></wav><wav><id>94</id><file>Y:\\Songs_new\\first\\Newuser_E.wav</file><checked>false</checked></wav><wav><id>97</id><file>Y:\\Songs_new\\first\\NineBlank1_E.wav</file><checked>false</checked></wav><wav><id>96</id><file>Y:\\Songs_new\\first\\NineBlank1_E.wav</file><checked>false</checked></wav><wav><id>98</id><file>Y:\\Songs_new\\first\\NineBlank_E.wav</file><checked>false</checked></wav><wav><id>99</id><file>Y:\\Songs_new\\first\\NineBlank_E.wav</file><checked>false</checked></wav><wav><id>101</id><file>Y:\\Songs_new\\first\\NumberConfirmationTasbih_E.wav</file><checked>false</checked></wav><wav><id>100</id><file>Y:\\Songs_new\\first\\NumberConfirmationTasbih_E.wav</file><checked>false</checked></wav><wav><id>103</id><file>Y:\\Songs_new\\first\\NumberConfirmationTasbih_S.wav</file><checked>false</checked></wav><wav><id>102</id><file>Y:\\Songs_new\\first\\NumberConfirmationTasbih_S.wav</file><checked>false</checked></wav><wav><id>105</id><file>Y:\\Songs_new\\first\\Quran1.wav</file><checked>false</checked></wav><wav><id>104</id><file>Y:\\Songs_new\\first\\Quran1.wav</file><checked>false</checked></wav><wav><id>106</id><file>Y:\\Songs_new\\first\\Quran2.wav</file><checked>false</checked></wav><wav><id>107</id><file>Y:\\Songs_new\\first\\Quran2.wav</file><checked>false</checked></wav><wav><id>108</id><file>Y:\\Songs_new\\first\\Quran3.wav</file><checked>false</checked></wav><wav><id>109</id><file>Y:\\Songs_new\\first\\Quran3.wav</file><checked>false</checked></wav><wav><id>119</id><file>Y:\\Songs_new\\first\\ABC_H.wav</file><checked>false</checked></wav><wav><id>120</id><file>Y:\\Songs_new\\first\\DEF_H.wav</file><checked>false</checked></wav><wav><id>121</id><file>Y:\\Songs_new\\first\\DEF_E.wav</file><checked>false</checked></wav></__wavs__></first><_13><__wavs__><wav><id>111</id><file>Y:\\Songs_new\\13\\UNR1_H.wav</file><checked>false</checked></wav><wav><id>110</id><file>Y:\\Songs_new\\13\\UNR1_H.wav</file><checked>false</checked></wav><wav><id>112</id><file>Y:\\Songs_new\\13\\UNR2_H.wav</file><checked>false</checked></wav><wav><id>113</id><file>Y:\\Songs_new\\13\\UNR2_H.wav</file><checked>false</checked></wav><wav><id>114</id><file>Y:\\Songs_new\\13\\UNR3_H.wav</file><checked>false</checked></wav><wav><id>115</id><file>Y:\\Songs_new\\13\\UNR3_H.wav</file><checked>false</checked></wav></__wavs__></_13></Songs_new></root></filestore>';
+				var json = formatterConverter.prototype.xmltojson(xml);
+				var json_obj = JSON.parse(json);
+				var folder_counter = 1;
+				prefun = test_multi;
+				gNode.removeChildren();
+				
+				test_multi(json_obj, 'json_obj.filestore.root', gNode, folder_counter);
+			}
+			
+			function test_multi(json_obj, json_seq, node, folder_counter)
+			{	
+				var folders = Object.keys(eval(json_seq));	
+				
+				for(var i = 0; i < folders.length; i++)
+				{
+					if(folders[i] != '__wavs__')
+					{
+						var node1=new zk.TreeNode({tree:tree,text:folders[i],type:zk.Tree.CHECKBOX,checkid:'f'+folder_counter++}, 'folder');	
+						tree.addNode(node,node1);
+						test_multi(json_obj, json_seq + '.' + folders[i], node1, folder_counter);
+						zk.oe(node,'click',function(){node.setChecked(node.checked,true);});
+					}
+					else
+					{
+						var files = eval(json_seq + '.__wavs__.wav');
+						
+						for(var j = 0; j < files.length; j++)
+						{
+							if(files[j].id != '-1')
+							{
+								var node1=new zk.TreeNode({tree:tree,text:files[j].file,type:zk.Tree.CHECKBOX,checkid:files[j].id,checked:files[j].checked}, 'file');	
+								tree.addNode(node, node1);
+								zk.oe(node,'click',function(){node.setChecked(node.checked,true);});
+							}
+						}
+					}
+				}
+			}
+			
+			function pathIdGenerator(path)
+			{
+				return path.split('/').join('_').split(':').join('_').split(',').join('_').split(' ').join('_');
+			};
+
+			function formatterConverter() {
+			}
+
+			formatterConverter.prototype.xmltojson = function (xml) {
+				var xotree = new XML.ObjTree();
+				var dumper = new JKL.Dumper();
+				var tree = xotree.parseXML(xml);
+
+				return (dumper.dump(tree));
+			};
+
+			formatterConverter.prototype.jsontoxml = function (json) {
+				var xotree = new XML.ObjTree();
+				var jsontext = JSON.parse(json);
+
+				var xml = (xotree.writeXML(jsontext));
+
+				return (xml);
+			};
+			
+		</script>
+</head>
+
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td style="width: 100%;"><span id="cont"></span></td>			
+		</tr>
+		<tr>
+			<td style="width: 100%;"><input type="hidden" id="hiddenxml"></span></td>			
+		</tr>
+	</table>
+</body>
+
+</html>

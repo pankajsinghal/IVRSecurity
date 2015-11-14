@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="userInfo" class="com.bng.core.da.UserDaoImp" lazy-init="false">
+		<property name="sessionFactoryGlobal" ref="sessionFactoryGlobal" />
+		<property name="sessionFactorySCP" ref="sessionFactorySCP" />
+	</bean>
+
+	<bean id="countryDao" class="com.bng.core.da.CountryDaoImp"
+		lazy-init="false">
+		<property name="sessionFactory" ref="sessionFactoryGlobal" />
+	</bean>
+
+	<bean id="xmlProperties" class="com.bng.core.util.XmlPropertiesReader"
+		lazy-init="false">
+		<property name="fileName" value="defaultxml.properties" />
+	</bean>
+	<bean id="htmlProperties" class="com.bng.core.util.XmlPropertiesReader"
+		lazy-init="false">
+		<property name="fileName" value="defaulthtml.properties" />
+	</bean>
+	<bean id="userService" class="com.bng.core.service.UserServiceImp"
+		lazy-init="false">
+		<property name="userDao" ref="userInfo" />
+	</bean>
+	<bean id="CountryBo" class="com.bng.core.service.CountryBoImp"
+		lazy-init="false">
+		<property name="countryDao" ref="countryDao" />
+	</bean>
+	<bean id="fileUploadDao" class="com.bng.core.da.FileUploadDaoImp">
+		<property name="sessionFactoryGlobal" ref="sessionFactoryGlobal" />
+		<property name="sessionFactorySCP" ref="sessionFactorySCP" />
+	</bean>
+	<bean id="fileUpload" class="com.bng.core.service.FileUploadImp">
+		<property name="fileUploadDao" ref="fileUploadDao" />
+		<property name="userDao" ref="userInfo" />
+		<property name="outputFolder" value="${outputfolder}" />
+		<property name="filestoreFolder" value="${filestore}" />
+	</bean>
+
+	<bean id="uploadConfig" class="com.bng.core.bean.UploadConfig">
+		<property name="fileup" ref="fileUpload" />
+		<property name="suburl" value="${Sub_url}"/>
+	</bean>
+
+
+	<bean id="businessObject" class="com.bng.core.scheduler.FileExtractorAndUpload">
+		<property name="filetype" value=".zip" />
+		<property name="filepath" value="${filePath.uploadfile}" />
+		<property name="fileUpload" ref="fileUpload" />
+	</bean>
+	
+	<bean id="connectionPool" class="com.bng.core.util.ConnectionPool" init-method="init" destroy-method="destroy">
+		<property name="boneCPDataSource" ref="dataSourceSCPInsert"/>
+	</bean>
+	
+	<bean id="schedulerDao" class="com.bng.core.da.SchedulerDaoImp"
+		lazy-init="true">
+		<property name="sessionFactorySCP" ref="sessionFactorySCP" />
+		<property name="connectionPool" ref="connectionPool"></property>
+	</bean>
+	
+	<bean id="schedulerBo" class="com.bng.core.service.SchedulerBoImp"
+		lazy-init="true">
+		<property name="schedulerDao" ref="schedulerDao" />
+	</bean>
+	
+<!-- 	<bean id="playlistDao" class="com.bng.core.da.PlaylistDaoImp"
+		lazy-init="true">
+		<property name="sessionFactorySCP" ref="sessionFactorySCP" />
+		<property name="connectionPool" ref="connectionPool"></property>
+	</bean>
+	
+	<bean id="playlistBo" class="com.bng.core.service.PlaylistBoImp"
+		lazy-init="true">
+		<property name="playlistDao" ref="playlistDao" />
+	</bean> -->
+	
+	<bean id="utility" class="com.bng.core.util.Utility">
+	<property name="countryCodes" value="${CountryCodes}"/>
+	<property name="obdMsisdnLength" value="${obdMsisdnLength}"/>
+	</bean>
+		<!-- <bean id="customerService" class="com.bng.core.bean.CustomerService"
+			init-method="init" destroy-method="cleanUp">
+			<property name="id" value="1"/>
+			<property name="username" value="admin"/>
+			<property name="password" value="admin"/>
+			<property name="cpassword" value="admin"/>
+			<property name="role" value="ADMIN"/>
+	</bean>
+	 <bean id="dataSource0" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		lazy-init="false" p:driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+		p:jdbcUrl="jdbc:sqlserver://192.168.1.10:1433;databaseName=IVR_DATA;instanceName=MSSQLSERVER;" 
+		p:user="sa" p:password="tech" p:autoCommitOnClose="true" p:maxPoolSize="${DbConnection.global.maxPool}" 
+		p:minPoolSize="${DbConnection.global.minPool}" p:initialPoolSize="${DbConnection.global.initialPool}" 
+		p:preferredTestQuery="Select 1" destroy-method="close" /> -->
+	<!-- <bean id="suburl" class="java.lang.String" >
+	 <constructor-arg>
+	 	<value>${Sub_url}</value>
+	 </constructor-arg>
+	</bean> -->
+</beans>

@@ -1,0 +1,110 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>callmode</id>
+			<name>Call Mode</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="synchronous">Synchronous</value>
+				<value dependency="null">Asynchronous</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>synchronous</id>
+			<name>Timeout (sec)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>callmode</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>urltype</id>
+			<name>URL Type</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="subservicename">Subscription</value>
+				<value dependency="null">Unsubscription</value>
+				<value dependency="null">Billing</value>
+				<value dependency="null">ConsentGateway</value>
+				<value dependency="null">SMS</value>
+				<value dependency="null">CRBT</value>
+				<value dependency="null">Generic</value>
+				<value dependency="null">USSD</value>
+				<value dependency="null">WAP</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>subservicename</id>
+			<name>Service Name</name>
+			<type>textbox</type>
+			<dependency>
+				<id>urltype</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>url</id>
+			<name>URL</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">http://192.168.0.x/</value>
+			</values>
+		</rec>
+	
+		<rec>
+			<id>method</id>
+			<name>Calling Method</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Get</value>
+				<value dependency="null">Post</value>
+			</values>
+		</rec>
+		
+		</recs>
+</mxParams>

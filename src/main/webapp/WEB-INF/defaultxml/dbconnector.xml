@@ -1,0 +1,402 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>value</id>
+			<name>Display</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>dbconnector</id>
+			<name>DB Connector</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="getuserdetail">GetUserDetail</value>
+				<value dependency="bpartyexists">BPartyExists</value>
+				<value dependency="getcircle">GetCircle</value>
+				<value dependency="isblacklisted">GetBlacklisted</value>
+				<value dependency="iswhitelisted">GetWhitelisted</value>
+				<value dependency="isredcarpet">GetRedCarpetCheck</value>
+                <value dependency="getfreeminutes">GetFreeMinutes</value>
+				<value dependency="getsubsdialcount">GetSubsDialCount</value>
+				<value dependency="getvisitordialcount">GetVisitorDialCount</value>
+				<value dependency="getalertstatus">GetAlertStatus</value>
+				<value dependency="getlanguage">GetLanguage</value>
+				<value dependency="gettimeofday">GetTimeOfDay</value>
+				<value dependency="getdayofweek">GetDayOfWeek</value>
+				<value dependency="getbookmark">GetBookmark</value>
+				<value dependency="voiceeffectexists">VoiceEffectExists</value>
+				<value dependency="isexpertnumber">IsExpertNumber</value>
+				<value dependency="iscoordinatornumber">IsCoordinatorNumber</value>
+				<value dependency="isfanavailable">IsFanAvailable</value>
+				<value dependency="isexpertavailable">IsExpertAvailable</value>
+				<value dependency="firstcallerofmonth">FirstCallerOfMonth</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>getuserdetail</id>
+			<name>Get User Detail</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">new</value>
+				<value dependency="null">active</value>
+				<value dependency="null">pending</value>
+				<value dependency="null">unsubscribed</value>
+				<value dependency="null">activetimeout </value>
+				<value dependency="null">grace</value>
+				<value dependency="null">parking</value>
+				<value dependency="null">suspended</value>
+				<value dependency="null">demo</value>
+			</values>
+		</rec>
+		<rec>
+			<id>bpartyexists</id>
+			<name>B Party Exists</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">true</value>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+		<rec>
+			<id>getcircle</id>
+			<name>Get Circle</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Delhi</value>
+				<value dependency="null">Chennai</value>
+				<value dependency="null">Mumbai</value>
+				<value dependency="null">Raj</value>
+				<value dependency="null">Punjab</value>
+			</values>
+		</rec>
+		<rec>
+			<id>isblacklisted</id>
+			<name>Is BlackListed</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>
+		
+		<rec>
+			<id>iswhitelisted</id>
+			<name>Is WhiteListed</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>
+		<rec>
+			<id>isredcarpet</id>
+			<name>Is RedCarpet</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>
+		<rec>
+			<id>getfreeminutes</id>
+			<name>Get Free Min.</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">NA</value>
+				<value dependency="null">FreeMinsLeft</value>
+				<value dependency="null">NoFreeMins</value>
+			</values>
+		</rec>
+		<rec>
+			<id>getsubsdialcount</id>
+			<name>Get Subs. Dial Count</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1-3</value>
+				<value dependency="null">4-7</value>
+				<value dependency="null">7+</value>
+			</values>
+		</rec>
+		<rec>
+			<id>getvisitordialcount</id>
+			<name>Get Visitor Dial Count</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>				
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">10</value>
+				<value dependency="null">10+</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>getalertstatus</id>
+			<name>Get Alert Status</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">true</value>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+		<rec>
+			<id>getlanguage</id>
+			<name>Get Language (Write 'NoLanuage' in case there isn't any)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>gettimeofday</id>
+			<name>Get Time Of Day</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">00</value>
+				<value dependency="null">01</value>
+				<value dependency="null">02</value>
+				<value dependency="null">03</value>
+				<value dependency="null">04</value>
+				<value dependency="null">05</value>
+				<value dependency="null">06</value>
+				<value dependency="null">07</value>
+				<value dependency="null">08</value>
+				<value dependency="null">09</value>
+				<value dependency="null">10</value>
+				<value dependency="null">11</value>
+				<value dependency="null">12</value>
+				<value dependency="null">13</value>
+				<value dependency="null">14</value>
+				<value dependency="null">15</value>
+				<value dependency="null">16</value>
+				<value dependency="null">17</value>
+				<value dependency="null">18</value>
+				<value dependency="null">19</value>
+				<value dependency="null">20</value>
+				<value dependency="null">21</value>
+				<value dependency="null">22</value>
+				<value dependency="null">23</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>getdayofweek</id>
+			<name>Get Day Of Week</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>			
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Monday</value>
+				<value dependency="null">Tuesday</value>
+				<value dependency="null">Wednesday</value>
+				<value dependency="null">Thursday</value>
+				<value dependency="null">Friday</value>
+				<value dependency="null">Saturday</value>
+				<value dependency="null">Sunday</value>
+			</values>
+		</rec>	
+		<rec>
+					<id>getbookmark</id>
+					<name>Get Day Of Week</name>
+					<type>select</type>
+					<dependency>
+						<id>dbconnector</id>
+						<value>null</value>
+						<action>null</action>
+					</dependency>			
+					<values>
+						<value dependency="null">SELECT</value>
+						<value dependency="null">BookmarkFound</value>
+						<value dependency="null">BookmarkNotFound</value>
+					</values>
+		</rec>	
+		
+		<rec>
+			<id>voiceeffectexists</id>
+			<name>Voice Effect Exists</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">true</value>
+				<value dependency="null">false</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>isexpertnumber</id>
+			<name>Is Expert Number</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>iscoordinatornumber</id>
+			<name>Is Coordinator Number</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>isfanavailable</id>
+			<name>Is Fan Available</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>	
+		
+		<rec>
+			<id>isexpertavailable</id>
+			<name>Is Expert Available</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">yes</value>
+				<value dependency="null">no</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>firstcallerofmonth</id>
+			<name>First Caller of Month</name>
+			<type>select</type>
+			<dependency>
+				<id>dbconnector</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">true</value>
+				<value dependency="null">false</value>
+			</values>
+		</rec>	
+	</recs>
+</mxParams>

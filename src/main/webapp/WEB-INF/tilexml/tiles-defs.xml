@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="baseLayout" template="/WEB-INF/tiles/baseLayout.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
+      <put-attribute name="menu"   value="/WEB-INF/tiles/menu.jsp"/>
+      <put-attribute name="body"   value="/WEB-INF/tiles/body.jsp"/>
+      <put-attribute name="footer"   value="/WEB-INF/tiles/footer.jsp"/>
+  </definition>
+  
+  <definition name="welcome" extends="baseLayout">
+      <put-attribute name="title"  value="Welcome"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/welcome.jsp"/>      
+  </definition>
+  <definition name="newuser" extends="baseLayout">
+      <put-attribute name="title"  value="NewUser"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/newUser.jsp"/>      
+  </definition>
+    <definition name="adduser" extends="baseLayout">
+      <put-attribute name="title"  value="AddUser"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/addUser.jsp"/>      
+  </definition>
+  <definition name="showuser" extends="baseLayout">
+      <put-attribute name="title"  value="ShowUser"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/showUser.jsp"/>      
+  </definition>
+    <definition name="nameuser" extends="baseLayout">
+      <put-attribute name="title"  value="NameUser"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/nameUser.jsp"/>      
+  </definition>
+  <definition name="modifyuser" extends="baseLayout">
+      <put-attribute name="title"  value="ModifyUser"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/modifyUser.jsp"/>      
+  </definition>
+  <definition name="viewservice" extends="baseLayout">
+      <put-attribute name="title"  value="ViewService"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/viewservice.jsp"/>      
+  </definition>
+  <definition name="viewservice2" extends="baseLayout">
+      <put-attribute name="title"  value="ViewService2"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/viewservice2.jsp"/>      
+  </definition>
+  <definition name="newjob" extends="baseLayout">
+      <put-attribute name="title"  value="NewJob"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/newJob.jsp"/>      
+  </definition>
+  <definition name="fileviewer" extends="baseLayout">
+      <put-attribute name="title"  value="FileViewer"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/fileviewer.jsp"/>      
+  </definition>
+   <definition name="jobadded" extends="baseLayout">
+      <put-attribute name="title"  value="jobAdded"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/JobAdded.jsp"/>      
+  </definition>
+  <definition name="blackouthours" extends="baseLayout">
+      <put-attribute name="title"  value="BlackoutHours"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/blackoutHours.jsp"/>      
+  </definition>
+  <definition name="viewjob" extends="baseLayout">
+      <put-attribute name="title"  value="Viewjob"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/viewjob.jsp"/>      
+  </definition>
+  <definition name="geteditjob" extends="baseLayout">
+      <put-attribute name="title"  value="Geteditjob"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/geteditjob.jsp"/>      
+  </definition>
+  <definition name="blackoutadded" extends="baseLayout">
+      <put-attribute name="title"  value="BlackoutAdded"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/blackoutAdded.jsp"/>      
+  </definition>
+
+ <definition name="cdr" extends="baseLayout">
+      <put-attribute name="title"  value="Cdr"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/cdr.jsp"/>      
+  </definition>
+  
+  <definition name="confdownload" extends="baseLayout">
+      <put-attribute name="title"  value="Confdownload"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/ConfDownload.jsp"/>      
+  </definition>
+  
+  <definition name="blacklist" extends="baseLayout">
+      <put-attribute name="title"  value="Blacklist"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/blacklist.jsp"/>      
+  </definition>
+  
+  <definition name="whitelist" extends="baseLayout">
+      <put-attribute name="title"  value="Whitelist"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/whitelist.jsp"/>      
+  </definition>
+  
+  <definition name="redcarpet" extends="baseLayout">
+      <put-attribute name="title"  value="Redcarpet"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/redcarpet.jsp"/>      
+  </definition>
+  
+  <definition name="uploaded" extends="baseLayout">
+      <put-attribute name="title"  value="Uploaded"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/uploaded.jsp"/>      
+  </definition>
+  
+  <definition name="playlist" extends="baseLayout">
+      <put-attribute name="title"  value="Playlist"/>
+      <put-attribute name="body"   value="/WEB-INF/pages/playlistviewer.jsp"/>      
+  </definition>
+</tiles-definitions>

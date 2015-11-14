@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <script language="javascript" type="text/javascript">
+
+        function deleteFile() {
+            var ddl = document.getElementById('promptfile');
+			for(var i = 0; i < ddl.length; i++)
+				if(ddl.options[i].selected)				
+					ddl.remove(i--);;
+            //ddl.selectedIndex = (ddl.length != 0 && index == 0) ? 0 : index - 1;
+        }
+
+        function moveUp()
+		{
+			var ddl = document.getElementById('promptfile');
+			//var size = ddl.length;
+			//var index = ddl.selectedIndex;
+			var selectedItems = new Array();
+			for(var i = 0; i < ddl.length; i++)
+				if(ddl.options[i].selected)				
+					selectedItems.push(i);
+				
+			if(selectedItems.length > 0)	
+				if(selectedItems[0] != 0)
+					for(var i = 0; i < selectedItems.length; i++)
+					{
+						var temp = ddl.options[selectedItems[i]].innerHTML;
+						ddl.options[selectedItems[i]].innerHTML = ddl.options[selectedItems[i] - 1].innerHTML;
+						ddl.options[selectedItems[i] - 1].innerHTML = temp;	
+						ddl.options[selectedItems[i] - 1].selected = true;
+						ddl.options[selectedItems[i]].selected = false;
+					}
+		}
+		
+		function moveDown()
+		{
+			var ddl = document.getElementById('promptfile');
+			//var size = ddl.length;
+			//var index = ddl.selectedIndex;
+			var selectedItems = new Array();
+			for(var i = 0; i < ddl.length; i++)
+				if(ddl.options[i].selected)				
+					selectedItems.push(i);
+				
+			if(selectedItems.length > 0)	
+				if(selectedItems[selectedItems.length - 1] != ddl.length - 1)
+					for(var i = selectedItems.length - 1; i >= 0; i--)
+					{
+						var temp = ddl.options[selectedItems[i]].innerHTML;
+						ddl.options[selectedItems[i]].innerHTML = ddl.options[selectedItems[i] + 1].innerHTML;
+						ddl.options[selectedItems[i] + 1].innerHTML = temp;	
+						ddl.options[selectedItems[i] + 1].selected = true;
+						ddl.options[selectedItems[i]].selected = false;
+					}			
+		}	
+        function addFiles() {
+            var element_File = document.getElementById('File1');
+            var ddl = document.getElementById('promptfile');
+            // var values = element_File.files[0].slice();
+            for (var i = 0; i < element_File.files.length; i++) {
+                var opt = document.createElement('option');
+                opt.innerHTML = element_File.files[i].name;
+                ddl.appendChild(opt);
+            }
+
+        }
+    </script>
+    <style type="text/css">
+        #contentdiv
+        {
+            width:150px;
+            height:150px;
+            overflow:auto;
+            text-align:left;
+        }
+        #promptfile
+        {
+            height: 135px;
+            width: auto;
+             overflow:auto;
+        }
+        #ddlSelect
+        {
+            width: 185px;
+        }
+                
+        #btnSubmit
+        {
+            width: 51px;
+        }
+        .style1
+        {
+            width: 112px;
+        }
+                
+        #seek
+        {
+            height: 20px;
+        }
+        .stylebuttons
+		{
+			font-size: 10px; 
+			font-weight:bold; 
+			width: 25px;
+			height: 20px;
+		} 
+		.styleupdown
+		{
+			font-size: 13px; 
+			width: 25px;
+			height: 30px;
+		}        
+    </style>
+</head>
+<body>
+
+    <table style="text: align:left">
+        <tr>
+            <td class="style1">
+                Description</td>
+                <td>
+                <input id="servicedescription" type="text" value = " "/></td>
+            <td align="center" class="style6">
+                &nbsp;</td>
+        </tr>		
+        <tr>
+            <td class="style1">
+                Files </td>
+                
+            <td align="right" class="style5" style="">
+            <div id="contentdiv">
+            <select id="promptfile" multiple="multiple" name="D2"> 				
+            </select>
+            </div>
+                </td>
+            <td class="style6">
+                <input id="up" type="button" value="▲" class="styleupdown"  onclick="moveUp();"/><br />
+                <input id="add" type="button" value="+" class="stylebuttons" /><br />
+				<input id="del" type="button" value="-" class="stylebuttons"  onclick="deleteFile();"/><br />
+                <input id="down" type="button" value="▼" class="styleupdown"  onclick="moveDown();"/><br />
+                </td>
+        </tr>
+        <tr>
+            <td class="style1">
+                Barge In</td>
+                <td>
+                    <input id="bargein" type="checkbox" /></td>
+            <td align="center" class="style6">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style1">
+                Timeout (sec)</td>
+            <td class="style5" style="">
+                <input id="timeout" type="text" /></td>
+            <td class="style6">
+                &nbsp;</td>
+        </tr>
+        <tr>
+			<td class="style1">Repeat Count (For No Input Only)</td>
+			<td class="style5" style=""><input id="repeatcount" type="text" /></td>
+			<td class="style6">&nbsp;</td>
+		</tr>
+        </table>
+
+</body>
+</html>

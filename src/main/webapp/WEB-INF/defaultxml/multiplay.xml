@@ -1,0 +1,296 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>playlist</id>
+			<name>Content File/s</name>
+			<type>selectmul</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="discard">1</value>
+				<value dependency="discard">1</value>
+			</values>
+		</rec>
+		<rec>
+			<id>seek</id>
+			<name>Seek</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>seekdtmf</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>seekdtmf</id>
+			<name>Seek DTMF</name>
+			<type>select</type>
+			<dependency>
+				<id>seek</id>
+				<value>false</value>
+				<action>hidden</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+		<rec>
+			<id>randomplay</id>
+			<name>Random Play</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+		<rec>
+			<id>previousdtmf</id>
+			<name>Previous</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+		<rec>
+			<id>nextdtmf</id>
+			<name>Next DTMF</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+            </values>
+		</rec>
+		<rec>
+			<id>repeatcount</id>
+			<name>Repeat Count</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>
+		<rec>
+			<id>repeatcurrent</id>
+			<name>Repeat Current</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+ 		     <values>
+			<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>startoverdtmf</id>
+			<name>StartOver</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+		<rec>
+			<id>savefilefor</id>
+			<name>Save File For</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">CRBT</value>
+				<value dependency="null">Tasbih</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>savefiledtmf</id>
+			<name>Save File DTMF</name>
+			<type>select</type>
+			<dependency>
+				<id>savefilefor</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>previousbookdtmf</id>
+			<name>Previous Book DTMF</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+		<rec>
+			<id>nextbookdtmf</id>
+			<name>Next Book DTMF</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">*</value>
+				<value dependency="null">#</value>
+				<value dependency="null">0</value>
+				<value dependency="null">1</value>
+				<value dependency="null">2</value>
+				<value dependency="null">3</value>
+				<value dependency="null">4</value>
+				<value dependency="null">5</value>
+				<value dependency="null">6</value>
+				<value dependency="null">7</value>
+				<value dependency="null">8</value>
+				<value dependency="null">9</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+	</recs>
+</mxParams>

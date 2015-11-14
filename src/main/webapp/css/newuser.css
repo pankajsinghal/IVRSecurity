@@ -1,0 +1,185 @@
+body{
+   font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+   font-size:12px;
+   color: white;
+ }
+ p, h1, form, button{border:0; margin:0; padding:0;}
+ .spacer{clear:both; height:1px;}
+ /* ----------- My Form ----------- */
+ .myform{
+   margin:0 auto;
+   width:450px;
+   padding:14px;
+   height: 100%;
+   overflow: hidden;
+ }
+ 
+   /* ----------- stylized ----------- */
+   #stylized{
+       border:solid 3px #7CFC00;
+       background:#141517;
+   }
+   #stylized h1 {
+       font-size:14px;
+       font-weight:bold;
+       margin-bottom:11px;
+       border-bottom:2px solid #7CFC00;
+       padding:0px 0px 9px 0px;
+       
+   }
+   #stylized label{
+       display:block;
+       font-weight:bold;
+       text-align:right;
+       width:140px;
+       float:left;
+   }
+   #stylized .small{
+       color:#666666;
+ display:block;
+       font-size:11px;
+       font-weight:normal;
+       text-align:right;
+       width:140px;
+   }
+   
+   #stylized input{
+       float:left;
+       font-size:12px;
+       padding:4px 2px;
+       border:solid 1px #aacfe4;
+       width:200px;
+       margin:2px 0 20px 10px;
+   }
+   #stylized select{
+       float:left;
+       /*--font-size:12px;--*/
+       padding:4px 2px;
+       border:solid 1px #aacfe4;
+       width:200px;
+       margin:2px 0 20px 10px;
+	   }
+   .listbox{
+		float:left;
+		padding:4px 2px;
+       width:200px;
+       margin:2px 0 20px 10px;
+   }
+   #stylized .listbox select{
+		width:100px;
+   }
+   #stylized .addjobbtn{
+       background: -moz-linear-gradient(center top , #A5CD4E 0%, #6B8F1A 100%) repeat scroll 0 0 transparent;
+	   box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+       color: #445B0F;
+       cursor: pointer;
+    border: 0 none;
+    border-radius: 26px 26px 26px 26px;
+    font-family: Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 10px 0;
+    outline: medium none;
+    padding: 6px 15px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out 0s;
+    margin-left:150px;
+	width: 100px;
+     
+   }
+   
+   #stylized .loadinging
+   {
+   float: left;
+    margin: 8px 0 0 6px;
+   }
+   
+   
+  #stylized .dupelicat
+   {
+   float: left;
+    margin: 1px 0 0 2px;
+   }
+   
+   
+    #stylized button{
+       background: -moz-linear-gradient(center top , #A5CD4E 0%, #6B8F1A 100%) repeat scroll 0 0 transparent;
+	   box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+       color: #445B0F;
+       cursor: pointer;
+    border: 0 none;
+    border-radius: 26px 26px 26px 26px;
+    font-family: Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 10px 0;
+    outline: medium none;
+    padding: 6px 15px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out 0s;
+    margin-left:150px;
+	width: 100px;
+     
+   }
+   
+   
+   
+   
+   
+   
+   #stylized .listbox input{
+	width: 50px;
+   }
+   
+   #stylized .check input{
+   float:left;
+   font-size:12px;
+   padding:4px 2px;
+   border:solid 1px #aacfe4;
+   width:18px;
+   margin:3px 143px 29px 10px;
+   
+   }
+   #stylized .time select{
+   float:left;
+   font-size:12px;
+   padding:4px 2px;
+   border:solid 1px #aacfe4;
+   width:40px;
+   margin:3px 21px 33px 16px;
+   }
+   
+   
+   
+.errormsg_job
+{
+	
+	color: #FF0000;
+    display: inline;
+    float: left;
+    font-family: alial;
+    font-size: 14px;
+    height: 17px;
+    margin-left: 150px;
+    margin-top: -10px;
+    width: 400px;
+}
+
+.succesloading
+{
+	 border: 2px solid #7CFC00;
+    float: left;
+    margin-left: 50px;
+    padding: 15px;
+}
+
+   
+  .succesloading span
+  {
+	color: #F6A72C;
+    font-size: 15px
+  }
+   
+  

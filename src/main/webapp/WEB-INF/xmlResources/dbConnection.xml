@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+	<!-- <bean id="dataSourceSCPInsert" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		lazy-init="false" p:driverClass="${DbConnection.scp_insert.JdbcDrivers}" 
+		p:jdbcUrl="${DbConnection.scp_insert.DSNurl}" p:user="${DbConnection.scp_insert.User}" 
+		p:password="${DbConnection.scp_insert.Password}" p:autoCommitOnClose="true" 
+		p:maxPoolSize="${DbConnection.scp_insert.maxPool}" p:minPoolSize="${DbConnection.scp_insert.minPool}" 
+		p:initialPoolSize="${DbConnection.scp_insert.initialPool}" p:preferredTestQuery="Select 
+		1" p:testConnectionOnCheckout="true" p:testConnectionOnCheckin="true" p:debugUnreturnedConnectionStackTraces="false" 
+		p:forceIgnoreUnresolvedTransactions="true" p:connectionTesterClassName="com.mchange.v2.c3p0.impl.DefaultConnectionTester" 
+		p:automaticTestTable="Select 1" p:maxIdleTime="120" p:idleConnectionTestPeriod="10" 
+		/> <bean id="dataSourceGlobal" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		lazy-init="false" p:driverClass="${DbConnection.global.JdbcDrivers}" p:jdbcUrl="${DbConnection.global.DSNurl}" 
+		p:user="${DbConnection.global.User}" p:password="${DbConnection.global.Password}" 
+		p:autoCommitOnClose="true" p:maxPoolSize="${DbConnection.global.maxPool}" 
+		p:minPoolSize="${DbConnection.global.minPool}" p:initialPoolSize="${DbConnection.global.initialPool}" 
+		p:preferredTestQuery="Select 1" p:testConnectionOnCheckout="true" p:testConnectionOnCheckin="true" 
+		p:debugUnreturnedConnectionStackTraces="false" p:forceIgnoreUnresolvedTransactions="true" 
+		p:connectionTesterClassName="com.mchange.v2.c3p0.impl.DefaultConnectionTester" 
+		p:automaticTestTable="Select 1" p:maxIdleTime="120" p:idleConnectionTestPeriod="10" 
+		/> <bean id="dataSourceSCP" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		lazy-init="false" p:driverClass="${DbConnection.scp.JdbcDrivers}" p:jdbcUrl="${DbConnection.scp.DSNurl}" 
+		p:user="${DbConnection.scp.User}" p:password="${DbConnection.scp.Password}" 
+		p:autoCommitOnClose="true" p:maxPoolSize="${DbConnection.scp.maxPool}" p:minPoolSize="${DbConnection.scp.minPool}" 
+		p:initialPoolSize="${DbConnection.scp.initialPool}" p:preferredTestQuery="Select 
+		1" p:testConnectionOnCheckout="true" p:testConnectionOnCheckin="true" p:debugUnreturnedConnectionStackTraces="false" 
+		p:forceIgnoreUnresolvedTransactions="true" p:connectionTesterClassName="com.mchange.v2.c3p0.impl.DefaultConnectionTester" 
+		p:automaticTestTable="Select 1" p:maxIdleTime="120" p:idleConnectionTestPeriod="10" 
+		/> -->
+	<bean id="dataSourceSCPInsert" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${DbConnection.scp_insert.JdbcDrivers}" />
+		<property name="jdbcUrl" value="${DbConnection.scp_insert.DSNurl}" />
+		<property name="username" value="${DbConnection.scp_insert.User}" />
+		<property name="password" value="${DbConnection.scp_insert.Password}" />
+		<property name="idleMaxAgeInMinutes" value="240" />
+		<property name="maxConnectionsPerPartition" value="${DbConnection.scp_insert.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${DbConnection.scp_insert.minConnectionsPerPartition}" />
+		<property name="partitionCount" value="${DbConnection.scp_insert.partitionCount}" />
+		<property name="acquireIncrement" value="5" />
+		<property name="statementsCacheSize" value="100" />
+		<property name="acquireRetryDelayInMs" value="10" />
+		<property name="idleConnectionTestPeriodInSeconds" value="10" />
+		<property name="connectionTestStatement" value="Select 1" />
+		<property name="deregisterDriverOnClose" value="false" />
+	</bean>
+	<bean id="dataSourceGlobal" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${DbConnection.global.JdbcDrivers}" />
+		<property name="jdbcUrl" value="${DbConnection.global.DSNurl}" />
+		<property name="username" value="${DbConnection.global.User}" />
+		<property name="password" value="${DbConnection.global.Password}" />
+		<property name="idleConnectionTestPeriodInSeconds" value="10" />
+		<property name="connectionTestStatement" value="Select 1" />
+		<property name="idleMaxAgeInMinutes" value="240" />
+		<property name="maxConnectionsPerPartition" value="${DbConnection.global.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${DbConnection.global.minConnectionsPerPartition}" />
+		<property name="partitionCount" value="${DbConnection.global.partitionCount}" />
+		<property name="acquireIncrement" value="5" />
+		<property name="statementsCacheSize" value="100" />
+		<property name="acquireRetryDelayInMs" value="10" />
+		<property name="deregisterDriverOnClose" value="false" />
+	</bean>
+	<bean id="dataSourceSCP" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${DbConnection.scp.JdbcDrivers}" />
+		<property name="jdbcUrl" value="${DbConnection.scp.DSNurl}" />
+		<property name="username" value="${DbConnection.scp.User}" />
+		<property name="password" value="${DbConnection.scp.Password}" />
+		<property name="idleConnectionTestPeriodInSeconds" value="10" />
+		<property name="connectionTestStatement" value="Select 1" />
+		<property name="idleMaxAgeInMinutes" value="240" />
+		<property name="maxConnectionsPerPartition" value="${DbConnection.scp.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${DbConnection.scp.minConnectionsPerPartition}" />
+		<property name="partitionCount" value="${DbConnection.scp.partitionCount}" />
+		<property name="acquireIncrement" value="5" />
+		<property name="statementsCacheSize" value="100" />
+		<property name="acquireRetryDelayInMs" value="10" />
+		<property name="deregisterDriverOnClose" value="false" />
+	</bean>
+
+	<bean id="sessionFactorySCP"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		destroy-method="destroy">
+		<property name="dataSource">
+			<ref bean="dataSourceSCP" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.bng.core.entity.Content</value>
+				<value>com.bng.core.entity.ContentCategory</value>
+				<value>com.bng.core.entity.ContentLabel</value>
+				<value>com.bng.core.entity.ContentMapper</value>
+				<value>com.bng.core.entity.ContentMeta</value>
+				<value>com.bng.core.entity.ContentMetaExtra</value>
+				<value>com.bng.core.entity.ContentProvider</value>
+				<value>com.bng.core.entity.ContentPlaylist</value>
+				<value>com.bng.core.entity.ContentPlaylistMapper</value>
+				<value>com.bng.core.entity.Mxdata</value>
+				<value>com.bng.core.entity.Mxgraph</value>
+				<value>com.bng.core.entity.MxgraphVersion</value>
+				<value>com.bng.core.entity.Service</value>
+				<value>com.bng.core.entity.ObdBlackoutHours</value>
+				<value>com.bng.core.entity.ObdFailureReasons</value>
+				<value>com.bng.core.entity.ObdCli</value>
+				<value>com.bng.core.entity.MxgraphKeyMapping</value>
+				<value>com.bng.core.entity.IvrBlacklist</value>
+				<value>com.bng.core.entity.IvrRedcarpetlist</value>
+				<value>com.bng.core.entity.IvrWhitelist</value>
+				<value>com.bng.core.entity.Playlist</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${DbConnection.scp.hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${DbConnection.scp.hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${DbConnection.scp.hibernate.show_sql}</prop>
+				<prop key="hibernate.cache.region.factory_class">${DbConnection.scp.hibernate.cache.region.factory_class}
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">${DbConnection.scp.hibernate.cache.use_second_level_cache}
+				</prop>
+				<prop key="hibernate.cache.use_query_cache">${DbConnection.scp.hibernate.cache.use_query_cache}
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="sessionFactoryGlobal"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		destroy-method="destroy">
+		<property name="dataSource">
+			<ref bean="dataSourceGlobal" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.bng.core.entity.Country</value>
+				<value>com.bng.core.entity.Operator</value>
+				<value>com.bng.core.entity.Users</value>
+				<value>com.bng.core.entity.UserRoles</value>
+				<value>com.bng.core.entity.UserMapping</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${DbConnection.global.hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${DbConnection.global.hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${DbConnection.global.hibernate.show_sql}</prop>
+				<prop key="hibernate.cache.region.factory_class">${DbConnection.global.hibernate.cache.region.factory_class}
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">${DbConnection.global.hibernate.cache.use_second_level_cache}
+				</prop>
+				<prop key="hibernate.cache.use_query_cache">${DbConnection.global.hibernate.cache.use_query_cache}
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="transactionManagerGlobal"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactoryGlobal" />
+		<qualifier value="global"></qualifier>
+	</bean>
+
+	<bean id="transactionManagerSCP"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactorySCP" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManagerSCP" />
+	<!-- <tx:annotation-driven transaction-manager="transactionManagerGlobal" 
+		/> -->
+
+</beans>

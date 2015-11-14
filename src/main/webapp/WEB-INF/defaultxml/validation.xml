@@ -1,0 +1,209 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>checkfirst</id>
+			<name>Check First</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">CountryCode</value>
+				<value dependency="null">OICKCode</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>bpartylength</id>
+			<name>BParty Length</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>		
+		<rec>
+			<id>allowgreater</id>
+			<name>Allow Greater Length</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+		<rec>
+			<id>iocaction</id>
+			<name>Action (OCIK)</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="synchronous">Add</value>
+				<value dependency="null">Remove</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>ioccode</id>
+			<name>OICK Code</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+			
+		<rec>
+			<id>prefixioc</id>
+			<name>Prefix (OICK)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+	
+		<rec>
+			<id>suffixioc</id>
+			<name>Suffix (OICK)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>			
+		<rec>
+			<id>conaction</id>
+			<name>Action (Country)</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="synchronous">Add</value>
+				<value dependency="null">Remove</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>countrycode</id>
+			<name>Country Code</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>prefixconcode</id>
+			<name>Prefix (Country-Code)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>suffixconcode</id>
+			<name>Suffix (Country-Code)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>	
+		<rec>
+			<id>bpartyprefixaction</id>
+			<name>Action (B-Party)</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="synchronous">Add</value>
+				<value dependency="null">Remove</value>
+			</values>
+		</rec>	
+		<rec>
+			<id>bpartyprefix</id>
+			<name>Prefix (B-Party)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+		<rec>
+			<id>invalidcharacters</id>
+			<name>Invalid Chars (CommaSeparated)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>		
+	</recs>
+</mxParams>

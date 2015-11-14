@@ -1,0 +1,151 @@
+<mxParams as="params">
+	<recs>
+		<rec>
+			<id>servicedescription</id>
+			<name>Description</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null"> </value>
+			</values>
+		</rec>
+        <rec>
+			<id>confirmlist</id>
+			<name>ConfirmList</name>
+			<type>selectmul</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="discard">1</value>
+				<value dependency="discard">1</value>
+			</values>
+		</rec>
+		<rec>
+			<id>minlen</id>
+			<name>Minimum len</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">1</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>maxlen</id>
+			<name>Maximum len</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">10</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>terminationchar</id>
+			<name>Termin. Char</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">#</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>timeout</id>
+			<name>TimeOut (sec)</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">25</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>repeatcount</id>
+			<name>No input repeat</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>
+		<rec>
+			<id>confirmation</id>
+			<name>Confirmation</name>
+			<type>checkbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">false</value>
+			</values>
+		</rec>
+
+		<rec>
+			<id>digittype</id>
+			<name>Digit Type</name>
+			<type>select</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">SELECT</value>
+				<value dependency="null">Date</value>
+				<value dependency="null">creditcard</value>
+				<value dependency="null">bpartynumber</value>
+				<value dependency="null">Age</value>
+				<value dependency="null">Surah</value>				
+				<value dependency="null">Tasbih</value>		
+				<value dependency="null">BookNumberForMultiPlay</value>
+				<value dependency="null">BookNumberNotForMultiPlay</value>
+				<value dependency="null">ChapterNumber</value>
+				<value dependency="null">SELECT</value>
+			</values>
+		</rec>
+		<rec>
+			<id>maxcount</id>
+			<name>Max. Count for Digit</name>
+			<type>textbox</type>
+			<dependency>
+				<id>null</id>
+				<value>null</value>
+				<action>null</action>
+			</dependency>
+			<values>
+				<value dependency="null">0</value>
+			</values>
+		</rec>
+		
+	</recs>
+</mxParams>
